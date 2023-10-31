@@ -1,0 +1,51 @@
+cabal-version:      3.0
+name:               reactive-markup-markdown
+version:            0.1.0.0
+license:            BSD-3-Clause
+license-file:       LICENSE
+author:             Simre1
+maintainer:         simre4775@gmail.com
+build-type:         Simple
+extra-doc-files:    CHANGELOG.md
+
+common common
+    ghc-options: -Wall
+    default-extensions:
+        TypeFamilies
+        DerivingStrategies
+        OverloadedLabels
+        OverloadedStrings
+        LambdaCase
+        DuplicateRecordFields
+        NoFieldSelectors
+        DataKinds
+
+library
+    import:           common
+    exposed-modules:  
+        ReactiveMarkup.Runner.Markdown
+        ReactiveMarkup.Quote.Markdown
+    build-depends:    
+        base ^>=4.17.0.0,
+        transformers,
+        containers,
+        vector,
+        text,
+        optics-core,
+        commonmark,
+        text-builder-linear,
+        template-haskell,
+        reactive-markup
+        
+    hs-source-dirs:   src
+    default-language: GHC2021
+
+test-suite reactive-markup-markdown-test
+    import:           common
+    default-language: GHC2021
+    type:             exitcode-stdio-1.0
+    hs-source-dirs:   test
+    main-is:          Main.hs
+    build-depends:
+        base ^>=4.17.0.0,
+        reactive-markup-markdown

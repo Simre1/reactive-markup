@@ -1,0 +1,4 @@
+packages: 
+  reactive-markup/reactive-markup.cabal,
+  reactive-markup-markdown/reactive-markup-markdown.cabal,
+  reactive-markup-html/reactive-markup-html.cabal
